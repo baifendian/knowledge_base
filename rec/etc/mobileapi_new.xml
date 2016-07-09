@@ -1,0 +1,10 @@
+<uwsgi>
+  <http>172.24.5.45:8966</http>
+  <module>server</module>
+  <master>1</master>
+  <processes>2</processes>
+  <harakiri>2</harakiri>
+  <listen>1024</listen>
+  <stats>0.0.0.0:1725</stats>
+  <enable-threads>1</enable-threads>
+</uwsgi>

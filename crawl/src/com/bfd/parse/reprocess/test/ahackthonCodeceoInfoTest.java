@@ -11,7 +11,7 @@ import com.bfd.parse.reprocess.ReProcessor;
 import com.bfd.parse.reprocess.ahackthonCodeceoInfoRe;
 import com.bfd.parse.util.JsonUtil;
 
-public class ahackthonCodeceoTest {
+public class ahackthonCodeceoInfoTest {
 	// 初始化taskdata数据结构，包含任务的各种配置
 		private static Map<String, Object> initTaskMap(
 				Map<String, Object> spiderData, String url, String iid, String cid,
@@ -46,12 +46,11 @@ public class ahackthonCodeceoTest {
 			String url = "http://www.codeceo.com/article/oracle-give-up-java.html";
 			
 			DownloadClient crawler = new DownloadClient();
-			String cid = "hackthon_importnew";
+			String cid = "hackthon_codeceo";
 			String pagetype = "newscontent";
 //			pagetype = "newslist";
 			int siteid = 185;
-			int pagetypeid = 176;
-			pagetypeid = 177;
+			int pagetypeid = 177;
 
 			// 以下为测试ajaxdata。
 			String stringZip = crawler.getPage(url, "1", cid, "test", "", "",

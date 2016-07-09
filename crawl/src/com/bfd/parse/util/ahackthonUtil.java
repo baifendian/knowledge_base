@@ -12,6 +12,11 @@ import com.bfd.crawler.utils.JsonUtils;
 public class ahackthonUtil {
 
 	private static final Log LOG = LogFactory.getLog(ahackthonUtil.class);
+	/**
+	 * items获取iid
+	 * @param resultData 任务数据
+	 * @return 返回是否成功
+	 */
 	public static boolean getIid(Map<String, Object> resultData){
 		if(resultData.containsKey("items")){
 			String link = "";

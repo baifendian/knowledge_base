@@ -46,7 +46,7 @@ public class ahackthonToutiaoListReTest {
 			String url = "http://toutiao.com/m5863656451/p3/?page_type=1";
 			
 			DownloadClient crawler = new DownloadClient();
-			String cid = "hackthon_SegmentFault";
+			String cid = "hackthon_toutiao";
 			String pagetype = "newslist";
 			int siteid = 188;
 			int pagetypeid = 176;

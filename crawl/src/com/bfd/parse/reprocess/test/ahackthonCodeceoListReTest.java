@@ -8,10 +8,10 @@ import com.bfd.parse.ParseTestForPlugin;
 import com.bfd.parse.client.DownloadClient;
 import com.bfd.parse.facade.parseunit.ParseUnit;
 import com.bfd.parse.reprocess.ReProcessor;
-import com.bfd.parse.reprocess.ahackthonImportListRe;
+import com.bfd.parse.reprocess.ahackthonCodeceoListRe;
 import com.bfd.parse.util.JsonUtil;
 
-public class ahackthonImportListReTest {
+public class ahackthonCodeceoListReTest {
 	// 初始化taskdata数据结构，包含任务的各种配置
 		private static Map<String, Object> initTaskMap(
 				Map<String, Object> spiderData, String url, String iid, String cid,
@@ -43,12 +43,12 @@ public class ahackthonImportListReTest {
 		@SuppressWarnings("unchecked")
 		public static void main(String[] args) {
 
-			String url = "http://www.importnew.com/cat/basic/page/2";
+			String url = "http://www.codeceo.com/article/tag/android/page/1";
 			
 			DownloadClient crawler = new DownloadClient();
-			String cid = "hackthon_importnew";
+			String cid = "hackthon_codeceo";
 			String pagetype = "newslist";
-			int siteid = 184;
+			int siteid = 185;
 			int pagetypeid = 176;
 
 			// 以下为测试ajaxdata。
@@ -70,7 +70,8 @@ public class ahackthonImportListReTest {
 			ParseUnit unit = ParseUnit.fromMap(map, new Date().getTime());
 
 			// 测试后处理插件
-			ReProcessor reprocessor = new ahackthonImportListRe();
+			ReProcessor reprocessor = new ahackthonCodeceoListRe();
+			
 			new ParseTestForPlugin().parseTest(unit, null, null, reprocessor);
 		}
 }

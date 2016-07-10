@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ppv="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/activity_bg_color" >
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/detail_title_bar" />
+
+    <View
+        android:id="@+id/title_bar_divider"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_below="@id/title_bar"
+        android:background="@color/detail_divider_day" />
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar_divider" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/new_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="@color/item_title"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/new_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:textColor="@color/item_title"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/new_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/new_time"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/base_article_bigimage"
+                android:visibility="gone" />
+
+            <!--
+         <com.tiger.quicknews.wedget.htmltextview.HtmlTextView
+        android:id="@+id/wb_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_below="@+id/new_img"
+        android:visibility="visible"
+        android:textSize="16sp"
+        android:textColor="@color/item_title"
+        android:layout_centerHorizontal="true" />
+            -->
+
+            <WebView
+                android:id="@+id/wb_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:visibility="visible" 
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:id="@+id/img_count"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_master"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <com.tiger.quicknews.wedget.ProgressPieView
+                android:id="@+id/progressPieView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignTop="@+id/wb_details"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="85dp"
+                android:text="0%"
+                android:visibility="gone"
+                ppv:typeface="fonts/Roboto/RobotoCondensed-Bold.ttf" />
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/wb_details"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="85dp"
+                android:src="@drawable/biz_special_news_cover"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
